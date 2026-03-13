@@ -27,7 +27,6 @@ const Contact = () => {
             <input 
               type="text" 
               name="nombre" 
-              defaultValue="Juan Diego Tinoco Velasquez"
               required
               className="w-full bg-[#0D1B2A] border border-[#415A77] rounded-lg p-3 text-[#E0E1DD] focus:outline-none focus:border-[#778DA9]"
             />
@@ -38,7 +37,6 @@ const Contact = () => {
             <input 
               type="email" 
               name="email" 
-              defaultValue="tinoco7038@gmail.com"
               required
               className="w-full bg-[#0D1B2A] border border-[#415A77] rounded-lg p-3 text-[#E0E1DD] focus:outline-none focus:border-[#778DA9]"
             />
