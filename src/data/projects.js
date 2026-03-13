@@ -7,7 +7,6 @@ export const projects = [
       description: "Desarrollo e implementación de soluciones para optimizar flujos de trabajo corporativos. Creación de scripts y configuraciones avanzadas para automatizar tareas repetitivas y mejorar la productividad del equipo.",
       fullDescription: "En este proyecto, desarrollé una serie de scripts personalizados utilizando Google Apps Script para automatizar procesos manuales. Esto incluyó la generación automática de informes a partir de datos en Hojas de cálculo de Google, la gestión de usuarios en Google Workspace y la creación de flujos de trabajo personalizados que integran Gmail, Calendar y Drive. El resultado fue una reducción significativa del tiempo dedicado a tareas administrativas rutinarias.",
       tags: ["Google Workspace", "Cloud Automation", "Scripting", "Optimización"],
-      // icon: <Cloud size={24} />, // Icons can be problematic in plain JS data files if imported/rendered elsewhere, but let's try keep it simple or remove icon here and handle in component.
       iconName: "Cloud",
       status: "Completado",
       images: [
@@ -25,21 +24,6 @@ export const projects = [
       iconName: "Wifi",
       status: "En Proceso",
       images: [
-        "/placeholder-project.svg",
-        "/placeholder-project.svg"
-      ]
-    },
-    {
-      id: 3,
-      title: "Portfolio Profesional",
-      description: "Desarrollo de portafolio personal responsive utilizando tecnologías modernas de frontend. Enfoque en diseño UX/UI limpio y accesibilidad.",
-      fullDescription: "Diseñé y desarrollé mi portafolio profesional para mostrar mis habilidades y proyectos. Utilicé React para la estructura de componentes, Tailwind CSS para un diseño rápido y responsive, y Framer Motion para agregar animaciones suaves que mejoran la experiencia del usuario. El sitio está desplegado en Netlify y optimizado para rendimiento y SEO.",
-      tags: ["React", "Tailwind CSS", "Frontend", "UX/UI"],
-      iconName: "User",
-      status: "Completado",
-      images: [
-        "/placeholder-project.svg",
-        "/placeholder-project.svg",
         "/placeholder-project.svg",
         "/placeholder-project.svg"
       ]

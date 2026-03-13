@@ -44,7 +44,6 @@ function Projects() {
               transition={{ delay: index * 0.1 }}
               className="bg-secondary p-8 rounded-2xl hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 border border-transparent hover:border-gray-700 flex flex-col group h-full relative overflow-hidden"
             >
-              {/* Status Badge */}
               <div className="absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full bg-primary/80 text-muted border border-gray-700">
                 {project.status}
               </div>
