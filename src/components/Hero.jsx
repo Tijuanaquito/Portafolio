@@ -11,7 +11,7 @@ function Hero() {
     about: "Soy un estudiante apasionado por la tecnología con un enfoque claro en la ciberseguridad y la administración de sistemas. Actualmente estoy terminando el grado medio de SMIX y preparándome para el superior de ASIX. Mi objetivo es proteger infraestructuras críticas y optimizar entornos de red. Combino mi formación técnica con una mentalidad de atleta: disciplina, resiliencia y mejora constante."
   };
 
-  const cvUrl = "https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/juan+diego-tinoco+velasquez/1ce8c74b-f675-4c82-b9e4-a022f29c2bbf?view=html";
+  const cvUrl = "https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/juan+diego-tinoco+velasquez/13b16135-7610-4fc4-8041-b7ee5ef10edd?view=html";
 
   return (
     <section className="min-h-[90vh] flex flex-col justify-center relative bg-primary px-4 pt-20 overflow-hidden">
