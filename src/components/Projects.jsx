@@ -1,39 +1,55 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Monitor } from 'lucide-react';
+import { ExternalLink, Github, Folder, Cloud, Wifi, User, Bolt } from 'lucide-react';
 
 function Projects() {
   const projects = [
     {
       id: 1,
-      name: "Proyecto 1",
-      description: "Descripción detallada del proyecto extraída del PDF.",
-      technologies: ["React", "Tailwind"],
-      link: "#",
-      repo: "#"
+      title: "Automatización con Google Workspace",
+      description: "Desarrollo e implementación de soluciones para optimizar flujos de trabajo corporativos. Creación de scripts y configuraciones avanzadas para automatizar tareas repetitivas y mejorar la productividad del equipo.",
+      tags: ["Google Workspace", "Cloud Automation", "Scripting", "Optimización"],
+      icon: <Cloud size={24} />,
+      status: "Completado"
     },
     {
       id: 2,
-      name: "Proyecto 2",
-      description: "Descripción detallada del proyecto extraída del PDF.",
-      technologies: ["Node.js", "Express"],
-      link: "#",
-      repo: "#"
+      title: "Diseño de Red Local (Gaming focus)",
+      description: "Configuración y optimización de una red de alto rendimiento diseñada específicamente para baja latencia y alta seguridad. Implementación de QoS, segmentación de tráfico y políticas de seguridad robustas.",
+      tags: ["Cisco", "Networking", "Seguridad", "Optimización", "Low Latency"],
+      icon: <Wifi size={24} />,
+      status: "En Proceso"
     },
-    // Añade más proyectos aquí según el PDF
+    // Añadiré un placeholder para Programación Web ya que el usuario menciona "Programación de Web" en Hard Skills
+    {
+      id: 3,
+      title: "Portfolio Profesional",
+      description: "Desarrollo de portafolio personal responsive utilizando tecnologías modernas de frontend. Enfoque en diseño UX/UI limpio y accesibilidad.",
+      tags: ["React", "Tailwind CSS", "Frontend", "UX/UI"],
+      icon: <User size={24} />,
+      status: "Completado"
+    }
   ];
 
   return (
-    <section id="projects" className="py-16 bg-primary text-light">
+    <section id="projects" className="py-20 bg-primary border-t border-gray-800 scroll-mt-20">
       <div className="container mx-auto px-4">
-        <motion.h2 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold mb-12 text-center text-accent"
+          className="text-center mb-16"
         >
-          Proyectos Destacados
-        </motion.h2>
+          <div className="flex justify-center mb-4">
+            <Bolt className="text-accent w-12 h-12 animate-pulse" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-light">
+            Proyectos Académicos y Personales
+          </h2>
+          <p className="text-muted max-w-2xl mx-auto">
+            Aplicación práctica de conocimientos en escenarios reales y simulados.
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -43,29 +59,33 @@ function Projects() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-secondary p-6 rounded-xl hover:shadow-xl transition-shadow border border-gray-800"
+              className="bg-secondary p-8 rounded-2xl hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 border border-transparent hover:border-gray-700 flex flex-col group h-full relative overflow-hidden"
             >
-              <div className="mb-4">
-                <Monitor className="w-10 h-10 text-accent mb-4" />
-                <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-                <p className="text-muted text-sm mb-4">{project.description}</p>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.technologies.map(tech => (
-                  <span key={tech} className="px-2 py-1 bg-primary text-xs rounded text-muted border border-gray-700">
-                    {tech}
-                  </span>
-                ))}
+              {/* Status Badge */}
+              <div className="absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full bg-primary/80 text-muted border border-gray-700">
+                {project.status}
               </div>
 
-              <div className="flex gap-4 mt-auto">
-                <a href={project.link} className="flex items-center text-sm text-light hover:text-accent transition-colors">
-                  <ExternalLink size={16} className="mr-1" /> Demo
-                </a>
-                <a href={project.repo} className="flex items-center text-sm text-light hover:text-accent transition-colors">
-                  <Github size={16} className="mr-1" /> Código
-                </a>
+              <div className="flex justify-between items-start mb-6 mt-2">
+                <div className="p-4 bg-primary rounded-2xl text-accent group-hover:text-light transition-colors shadow-inner ring-1 ring-gray-800">
+                  {project.icon}
+                </div>
+              </div>
+
+              <h3 className="text-xl font-bold mb-3 text-light group-hover:text-accent transition-colors">
+                {project.title}
+              </h3>
+              
+              <p className="text-muted mb-6 flex-grow leading-relaxed text-sm">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-800">
+                {project.tags.map((tag, i) => (
+                  <span key={i} className="px-3 py-1 text-xs font-mono font-medium text-accent bg-primary rounded-md border border-gray-800">
+                    #{tag}
+                  </span>
+                ))}
               </div>
             </motion.div>
           ))}
