@@ -13,52 +13,34 @@ const Contact = () => {
         {/* IMPORTANTE: Los atributos 'data-netlify="true"' y 'name="contacto"' 
           son los que hacen la magia para que te llegue el correo.
         */}
-        <form 
-          name="contacto" 
-          method="POST" 
-          data-netlify="true"
-          className="space-y-6"
-        >
-          {/* Este campo oculto es obligatorio para Netlify */}
-          <input type="hidden" name="form-name" value="contacto" />
+       <form 
+  name="contacto" 
+  method="POST" 
+  data-netlify="true" 
+  className="space-y-6"
+>
+  {/* ESTA LÍNEA ES VITAL: Si no está, Netlify ignora el envío */}
+  <input type="hidden" name="form-name" value="contacto" />
 
-          <div>
-            <label className="block text-[#778DA9] text-sm mb-2">Nombre</label>
-            <input 
-              type="text" 
-              name="nombre" 
-              required
-              className="w-full bg-[#0D1B2A] border border-[#415A77] rounded-lg p-3 text-[#E0E1DD] focus:outline-none focus:border-[#778DA9]"
-            />
-          </div>
+  <div>
+    <label className="block text-sm mb-2 text-[#778DA9]">Nombre</label>
+    <input type="text" name="nombre" required className="w-full p-3 bg-[#0D1B2A] border border-[#415A77] rounded text-white" />
+  </div>
 
-          <div>
-            <label className="block text-[#778DA9] text-sm mb-2">Tu Email</label>
-            <input 
-              type="email" 
-              name="email" 
-              required
-              className="w-full bg-[#0D1B2A] border border-[#415A77] rounded-lg p-3 text-[#E0E1DD] focus:outline-none focus:border-[#778DA9]"
-            />
-          </div>
+  <div>
+    <label className="block text-sm mb-2 text-[#778DA9]">Email</label>
+    <input type="email" name="email" required className="w-full p-3 bg-[#0D1B2A] border border-[#415A77] rounded text-white" />
+  </div>
 
-          <div>
-            <label className="block text-[#778DA9] text-sm mb-2">Mensaje</label>
-            <textarea 
-              name="mensaje" 
-              rows="4" 
-              required
-              className="w-full bg-[#0D1B2A] border border-[#415A77] rounded-lg p-3 text-[#E0E1DD] focus:outline-none focus:border-[#778DA9]"
-            >¡Hola! He visto tu portafolio y me gustaría que trabajemos juntos en un nuevo proyecto de desarrollo web. ¡Espero tu respuesta!</textarea>
-          </div>
+  <div>
+    <label className="block text-sm mb-2 text-[#778DA9]">Mensaje</label>
+    <textarea name="mensaje" required rows="4" className="w-full p-3 bg-[#0D1B2A] border border-[#415A77] rounded text-white"></textarea>
+  </div>
 
-          <button 
-            type="submit"
-            className="w-full bg-[#415A77] hover:bg-[#778DA9] text-[#E0E1DD] font-bold py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Enviar Mensaje
-          </button>
-        </form>
+  <button type="submit" className="w-full bg-[#415A77] p-3 rounded font-bold hover:bg-[#778DA9] transition-colors">
+    Enviar Mensaje
+  </button>
+</form>
       </div>
     </section>
   );

@@ -7,6 +7,12 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Formulario oculto para asegurar detección de Netlify Forms -->
+    <form name="contacto" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nombre" />
+      <input type="email" name="email" />
+      <textarea name="mensaje"></textarea>
+    </form>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
