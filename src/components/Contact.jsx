@@ -10,46 +10,47 @@ const Contact = () => {
           <span className="text-[#415A77]">tinoco7038@gmail.com</span>
         </p>
 
-        {/* IMPORTANTE: Los atributos 'data-netlify="true"' y 'name="contacto"' 
-          son los que hacen la magia para que te llegue el correo.
-        */}
+        {/* Formulario conectado a tu ID de Formspree */}
         <form 
-          action="https://formspree.io/f/tinoco7038@gmail.com"
-          method="POST" 
+          action="https://formspree.io/f/mwvrqbpg" 
+          method="POST"
           className="space-y-6"
         >
           <div>
-            <label className="block text-sm mb-2 text-[#778DA9]">Nombre</label>
+            <label className="block text-[#778DA9] text-sm mb-2">Nombre</label>
             <input 
               type="text" 
               name="name" 
-              required 
+              required
+              placeholder="Tu nombre completo"
               className="w-full bg-[#0D1B2A] border border-[#415A77] rounded-lg p-3 text-[#E0E1DD] focus:outline-none focus:border-[#778DA9]"
             />
           </div>
 
           <div>
-            <label className="block text-sm mb-2 text-[#778DA9]">Email</label>
+            <label className="block text-[#778DA9] text-sm mb-2">Tu Email</label>
             <input 
               type="email" 
               name="email" 
-              required 
+              required
+              placeholder="email@ejemplo.com"
               className="w-full bg-[#0D1B2A] border border-[#415A77] rounded-lg p-3 text-[#E0E1DD] focus:outline-none focus:border-[#778DA9]"
             />
           </div>
 
           <div>
-            <label className="block text-sm mb-2 text-[#778DA9]">Mensaje</label>
+            <label className="block text-[#778DA9] text-sm mb-2">Mensaje</label>
             <textarea 
               name="message" 
-              required 
               rows="4" 
+              required
+              placeholder="¿En qué puedo ayudarte?"
               className="w-full bg-[#0D1B2A] border border-[#415A77] rounded-lg p-3 text-[#E0E1DD] focus:outline-none focus:border-[#778DA9]"
             ></textarea>
           </div>
 
           <button 
-            type="submit" 
+            type="submit"
             className="w-full bg-[#415A77] hover:bg-[#778DA9] text-[#E0E1DD] font-bold py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
           >
             Enviar Mensaje
