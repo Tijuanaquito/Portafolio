@@ -14,9 +14,10 @@ const Contact = () => {
           son los que hacen la magia para que te llegue el correo.
         */}
        <form 
-  name="contacto" 
+ name="contacto" 
   method="POST" 
-  data-netlify="true" 
+  data-netlify="true"
+  action="/?success=true" 
   className="space-y-6"
 >
   {/* ESTA LÍNEA ES VITAL: Si no está, Netlify ignora el envío */}
