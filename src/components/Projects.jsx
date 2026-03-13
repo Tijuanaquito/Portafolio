@@ -1,35 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Folder, Cloud, Wifi, User, Bolt } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ExternalLink, Github, Folder, Cloud, Wifi, User, Bolt, Monitor } from 'lucide-react';
+import { projects } from '../data/projects';
 
 function Projects() {
-  const projects = [
-    {
-      id: 1,
-      title: "Automatización con Google Workspace",
-      description: "Desarrollo e implementación de soluciones para optimizar flujos de trabajo corporativos. Creación de scripts y configuraciones avanzadas para automatizar tareas repetitivas y mejorar la productividad del equipo.",
-      tags: ["Google Workspace", "Cloud Automation", "Scripting", "Optimización"],
-      icon: <Cloud size={24} />,
-      status: "Completado"
-    },
-    {
-      id: 2,
-      title: "Diseño de Red Local (Gaming focus)",
-      description: "Configuración y optimización de una red de alto rendimiento diseñada específicamente para baja latencia y alta seguridad. Implementación de QoS, segmentación de tráfico y políticas de seguridad robustas.",
-      tags: ["Cisco", "Networking", "Seguridad", "Optimización", "Low Latency"],
-      icon: <Wifi size={24} />,
-      status: "En Proceso"
-    },
-    // Añadiré un placeholder para Programación Web ya que el usuario menciona "Programación de Web" en Hard Skills
-    {
-      id: 3,
-      title: "Portfolio Profesional",
-      description: "Desarrollo de portafolio personal responsive utilizando tecnologías modernas de frontend. Enfoque en diseño UX/UI limpio y accesibilidad.",
-      tags: ["React", "Tailwind CSS", "Frontend", "UX/UI"],
-      icon: <User size={24} />,
-      status: "Completado"
+  const renderIcon = (iconName) => {
+    switch(iconName) {
+      case 'Cloud': return <Cloud size={24} />;
+      case 'Wifi': return <Wifi size={24} />;
+      case 'User': return <User size={24} />;
+      default: return <Monitor size={24} />;
     }
-  ];
+  };
 
   return (
     <section id="projects" className="py-20 bg-primary border-t border-gray-800 scroll-mt-20">
@@ -53,8 +36,8 @@ function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
+            <Link to={`/projects/${project.id}`} key={project.id} className="block h-full"> 
             <motion.div
-              key={project.id}
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -68,7 +51,7 @@ function Projects() {
 
               <div className="flex justify-between items-start mb-6 mt-2">
                 <div className="p-4 bg-primary rounded-2xl text-accent group-hover:text-light transition-colors shadow-inner ring-1 ring-gray-800">
-                  {project.icon}
+                  {renderIcon(project.iconName)}
                 </div>
               </div>
 
@@ -88,6 +71,7 @@ function Projects() {
                 ))}
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
       </div>

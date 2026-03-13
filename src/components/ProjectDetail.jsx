@@ -79,13 +79,12 @@ const ProjectDetail = () => {
                   className="relative aspect-video bg-primary/30 rounded-lg overflow-hidden border-2 border-gray-800 hover:border-accent transition-colors group cursor-pointer"
                   onClick={() => setSelectedImage(img)}
                 >
-                  {/* Placeholder Visual si no hay imagen real cargada */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-primary to-secondary p-4">
-                    <ZoomIn className="w-8 h-8 text-accent mb-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="text-muted text-sm font-medium">Click para ver Imagen {index + 1}</span>
-                    <span className="text-xs text-gray-500 mt-1">(Pendiente de cargar)</span>
+                  <img src={img} alt={`Captura ${index + 1}`} className="w-full h-full object-cover" onError={(e) => {e.target.style.display='none'; e.target.nextSibling.style.display='flex'}} />
+                  {/* Fallback si falla la imagen */}
+                  <div className="absolute inset-0 flex-col items-center justify-center bg-gradient-to-br from-primary to-secondary p-4 hidden">
+                    <ZoomIn className="w-8 h-8 text-accent mb-2" />
+                    <span className="text-muted text-sm font-medium">Ver Imagen {index + 1}</span>
                   </div>
-                  {/* Aquí iría la imagen real: <img src={img} alt={`Captura ${index + 1}`} className="w-full h-full object-cover" /> */}
                 </motion.div>
               ))}
             </div>
@@ -126,14 +125,8 @@ const ProjectDetail = () => {
               className="max-w-5xl max-h-[90vh] w-full bg-secondary rounded-lg overflow-hidden shadow-2xl relative"
               onClick={(e) => e.stopPropagation()} // Evitar cerrar al hacer click en la imagen/contenedor
             >
-               <div className="aspect-video bg-gray-900 flex items-center justify-center text-light">
-                  {/* Aquí iría <img src={selectedImage} ... /> */}
-                  <div className="text-center p-8">
-                    <span className="text-6xl mb-4 block">🖼️</span>
-                    <h3 className="text-2xl font-bold mb-2">Vista Previa de Imagen</h3>
-                    <p className="text-muted">La ruta de la imagen es: <code className="bg-black/50 px-2 py-1 rounded text-accent">{selectedImage}</code></p>
-                    <p className="mt-4 text-sm text-gray-500">Reemplaza esta ruta en src/data/projects.js con tus archivos reales.</p>
-                  </div>
+               <div className="aspect-video bg-gray-900 flex items-center justify-center text-light relative">
+                  <img src={selectedImage} alt="Vista Previa" className="w-full h-full object-contain" />
                </div>
             </motion.div>
           </motion.div>

@@ -11,9 +11,9 @@ export const projects = [
       iconName: "Cloud",
       status: "Completado",
       images: [
-        "/placeholder-project.jpg", // Reemplaza con tus imágenes reales: /assets/proyectos/p1-1.jpg
-        "/placeholder-project.jpg",
-        "/placeholder-project.jpg"
+        "/placeholder-project.svg",
+        "/placeholder-project.svg",
+        "/placeholder-project.svg"
       ]
     },
     {
@@ -25,8 +25,8 @@ export const projects = [
       iconName: "Wifi",
       status: "En Proceso",
       images: [
-        "/placeholder-project.jpg",
-        "/placeholder-project.jpg"
+        "/placeholder-project.svg",
+        "/placeholder-project.svg"
       ]
     },
     {
@@ -38,10 +38,10 @@ export const projects = [
       iconName: "User",
       status: "Completado",
       images: [
-        "/placeholder-project.jpg",
-        "/placeholder-project.jpg",
-        "/placeholder-project.jpg",
-        "/placeholder-project.jpg"
+        "/placeholder-project.svg",
+        "/placeholder-project.svg",
+        "/placeholder-project.svg",
+        "/placeholder-project.svg"
       ]
     }
   ];
