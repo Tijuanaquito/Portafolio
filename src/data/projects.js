@@ -10,9 +10,13 @@ export const projects = [
       iconName: "Cloud",
       status: "Completado",
       images: [
-        "/placeholder-project.svg",
-        "/placeholder-project.svg",
-        "/placeholder-project.svg"
+        "/Proyectos/Proyecto Workspace/imagen_2026-03-14_124715172.png",
+        "/Proyectos/Proyecto Workspace/imagen_2026-03-14_124746828.png",
+        "/Proyectos/Proyecto Workspace/imagen_2026-03-14_124802389.png",
+        "/Proyectos/Proyecto Workspace/imagen_2026-03-14_124900106.png",
+        "/Proyectos/Proyecto Workspace/imagen_2026-03-14_125008600.png",
+        "/Proyectos/Proyecto Workspace/imagen_2026-03-14_125126119.png",
+        "/Proyectos/Proyecto Workspace/imagen_2026-03-14_125146399.png"
       ]
     },
     {
@@ -24,8 +28,10 @@ export const projects = [
       iconName: "Wifi",
       status: "En Proceso",
       images: [
-        "/placeholder-project.svg",
-        "/placeholder-project.svg"
+        "/Proyectos/Proyecto red local/imagen_2026-03-14_125320973.png",
+        "/Proyectos/Proyecto red local/imagen_2026-03-14_125357796.png",
+        "/Proyectos/Proyecto red local/imagen_2026-03-14_125420382.png",
+        "/Proyectos/Proyecto red local/imagen_2026-03-14_125517088.png"
       ]
     }
   ];
